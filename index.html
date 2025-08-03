@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>軟迪華強北直購</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <style>
+      .procurement-section {
+        background-color: #e9f5ff;
+        border: 1px solid #bde0fe;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+      #procurement-input-group {
+        display: flex;
+        gap: 10px;
+      }
+      #procurement-input-group input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      #procurement-result {
+        margin-top: 20px;
+      }
+      .spec-group {
+        margin: 10px 0;
+      }
+      .spec-group label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .spec-group select {
+        padding: 5px;
+        border-radius: 4px;
+      }
+      #quantity_1688 {
+        width: 80px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="checkout.html" class="mobile-checkout-button">🛒 前往結帳</a>
+
+    <div class="container">
+      <h1>軟迪華強北直購</h1>
+      <div class="notice"></div>
+
+      <div class="procurement-section">
+        <h2>找不到想要的商品？</h2>
+        <p>請貼上 1688 商品連結，我們為您代購！(目前匯率 1 RMB ≈ 4.5 TWD)</p>
+        <div id="procurement-input-group">
+          <input
+            type="url"
+            id="1688-url-input"
+            placeholder="請在此貼上 1688 商品連結..."
+          />
+          <button id="fetch-1688-btn" class="action-button" style="width: auto">
+            擷取商品
+          </button>
+        </div>
+        <div id="procurement-result"></div>
+      </div>
+
+      <a href="checkout.html" class="checkout-button" id="desktop-checkout-btn"
+        >🛒 前往結帳</a
+      >
+      <a
+        href="orders.html"
+        class="checkout-button"
+        style="background-color: #17a2b8"
+        >📋 查詢歷史訂單</a
+      >
+
+      <h2>本店商品列表</h2>
+      <div id="products-grid" class="products-grid"></div>
+    </div>
+
+    <footer
+      style="
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+      "
+    >
+      <p>
+        <a href="admin.html" style="color: #6c757d; font-size: 14px"
+          >管理後台</a
+        >
+      </p>
+    </footer>
+
+    <script src="static/script.js" defer></script>
+  </body>
+</html>

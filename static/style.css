@@ -1,0 +1,313 @@
+/* ========================================= */
+/* ===== 基礎樣式 (Base Styles) ===== */
+/* ========================================= */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 20px;
+  background-color: #f4f4f9;
+  color: #333;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.notice {
+  background-color: #fffbe6;
+  border-left: 5px solid #ffc107;
+  padding: 1px 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.product-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.product-card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+.product-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #d9534f;
+}
+.price-breakdown {
+  font-size: 14px;
+  color: #666;
+}
+.action-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 1em;
+}
+.checkout-button {
+  background-color: #28a745;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  background-color: white;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+th {
+  background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.items-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* --- 後台與表單樣式 --- */
+.admin-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group input {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.edit-btn,
+.delete-btn {
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  margin-right: 5px;
+}
+.edit-btn {
+  background-color: #ffc107;
+}
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* --- 結帳頁面樣式 --- */
+.quantity-controls button {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.quantity-display {
+  display: inline-block;
+  min-width: 30px;
+  text-align: center;
+}
+.remove-btn {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+.payment-info-box {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.payment-info-box h4 {
+  margin-top: 0;
+}
+.account-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  flex-wrap: wrap;
+}
+#bank-account-number {
+  font-weight: bold;
+  color: #007bff;
+  letter-spacing: 1px;
+}
+#copy-account-btn {
+  padding: 5px 10px;
+  border: 1px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#copy-account-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* --- 手機版懸浮結帳按鈕樣式 (預設隱藏) --- */
+.mobile-checkout-button {
+  display: none;
+}
+
+/* ========================================= */
+/* ===== 手機版優化 (Mobile Optimization) ===== */
+/* ========================================= */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .container {
+    padding-bottom: 80px; /* 避免內容被懸浮按鈕遮住 */
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* 表單在手機上變為單欄 */
+  }
+
+  /* --- 按鈕優化 --- */
+  .action-button,
+  .checkout-button {
+    padding: 15px 20px;
+    font-size: 1.1em;
+  }
+
+  /* --- 懸浮按鈕與電腦版按鈕顯示邏輯 --- */
+  #desktop-checkout-btn {
+    display: none; /* 在手機上，只隱藏 ID 為 desktop-checkout-btn 的按鈕 */
+  }
+
+  .mobile-checkout-button {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+  }
+  .mobile-checkout-button:active {
+    background-color: #218838;
+  }
+
+  /* --- 響應式表格樣式 --- */
+  table thead {
+    display: none; /* 隱藏電腦版的表頭 */
+  }
+  table,
+  table tbody,
+  table tr,
+  table td {
+    display: block; /* 將表格元素變為區塊，使其可以垂直排列 */
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  table tr {
+    margin-bottom: 15px; /* 每張卡片之間增加間距 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  table td {
+    display: flex; /* 使用 Flexbox 來對齊標籤和內容 */
+    justify-content: space-between; /* 讓標籤和內容左右對齊 */
+    align-items: center;
+    text-align: right; /* 讓內容靠右 */
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+  }
+  table td:before {
+    content: attr(data-label); /* 讀取 data-label 的內容作為標籤 */
+    font-weight: bold;
+    text-align: left;
+    padding-right: 10px;
+  }
+  table td:last-child {
+    border-bottom: none;
+  }
+
+  /* 處理表尾的特殊情況 */
+  table tfoot tr,
+  table tfoot td {
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  table tfoot td[colspan="4"] {
+    text-align: right;
+  }
+  table tfoot td[data-label="總計"] {
+    padding-top: 15px;
+  }
+}

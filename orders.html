@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>歷史訂單查詢</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <div class="container" style="max-width: 900px">
+      <h1>歷史訂單查詢</h1>
+      <a href="index.html">返回商店首頁</a>
+      <div class="admin-section">
+        <div class="form-group">
+          <label for="paopaohu-id-lookup"
+            >請輸入您的跑跑虎集運會員編號以查詢訂單：</label
+          >
+          <input
+            type="text"
+            id="paopaohu-id-lookup"
+            placeholder="輸入後點擊查詢按鈕"
+          />
+        </div>
+        <button id="lookup-btn" class="action-button">查詢</button>
+      </div>
+      <div class="admin-section">
+        <h2>查詢結果</h2>
+        <table id="orders-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>下單時間</th>
+              <th>總額</th>
+              <th>購買商品</th>
+            </tr>
+          </thead>
+          <tbody id="orders-list">
+            <tr>
+              <td colspan="4" style="text-align: center">
+                請輸入您的會員編號進行查詢。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="static/orders.js" defer></script>
+  </body>
+</html>

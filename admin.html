@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head> </head>
+  <body>
+    <div
+      id="login-container"
+      class="container"
+      style="max-width: 400px; margin-top: 50px"
+    >
+      <div class="admin-section">
+        <h2>管理後台登入</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">帳號</label>
+            <input type="text" id="username" required value="admin" />
+          </div>
+          <div class="form-group">
+            <label for="password">密碼</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit" class="action-button">登入</button>
+          <p id="login-error" style="color: red; margin-top: 10px"></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="main-content" class="container" style="display: none">
+      <h1>管理後台</h1>
+      <a href="index.html">返回商店首頁</a> |
+      <button id="logout-btn">登出</button>
+      <div class="admin-section">
+        <h2>訂單列表</h2>
+        <table style="width: 100%">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>下單時間</th>
+              <th>跑跑虎 ID</th>
+              <th>集運倉庫</th>
+              <th>末五碼</th>
+              <th>總額</th>
+              <th>購買商品</th>
+            </tr>
+          </thead>
+          <tbody id="orders-list"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="static/admin.js" defer></script>
+  </body>
+</html>
